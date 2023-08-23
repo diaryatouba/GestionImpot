@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestion des Impôts</title>
+</head>
+<body>
+<h1>Liste des Déclarants</h1>
+<table>
+    <tr th:each="declarant : ${declarants}">
+        <td th:text="${declarant.raisonSociale}"></td>
+        <td th:text="${declarant.adresse}"></td>
+        <td th:text="${declarant.email}"></td>
+        <td th:text="${declarant.telephone}"></td>
+    </tr>
+</table>
+</body>
+</html>

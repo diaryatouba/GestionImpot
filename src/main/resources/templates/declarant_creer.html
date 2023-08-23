@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Formulaire Declarant</title>
+  <!-- Inclure les liens CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Ajouter un Declarant</h2>
+  <form th:action="@{/declarant/creer}" th:object="${declarantRequete}" method="post">
+    <div class="form-group">
+      <label for="raisonSociale">Raison Sociale</label>
+      <input type="text" class="form-control" th:field="*{raisonSociale}" placeholder="Raison Sociale">
+      <span th:if="${#fields.hasErrors('raisonSociale')}" class="error-message" th:errors="*{raisonSociale}"></span>
+    </div>
+    <div class="form-group">
+      <label for="adresse">Adresse</label>
+      <input type="text" class="form-control" th:field="*{adresse}" placeholder="Adresse">
+      <span th:if="${#fields.hasErrors('adresse')}" class="error-message" th:errors="*{adresse}"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
+      <span th:if="${#fields.hasErrors('email')}" class="error-message" th:errors="*{email}"></span>
+    </div>
+    <div class="form-group">
+      <label for="telephone">Téléphone</label>
+      <input type="text" class="form-control" th:field="*{telephone}" placeholder="Téléphone">
+      <span th:if="${#fields.hasErrors('telephone')}" class="error-message" th:errors="*{telephone}"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+</div>
+
+<!-- Inclure les scripts JavaScript de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
